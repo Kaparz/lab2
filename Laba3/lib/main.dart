@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Increment App',
       theme: ThemeData(
-        primarySwatch: Colors.green, // Зеленая тема
+        primarySwatch: Colors.blue, // Цветовая тема приложения
       ),
       home: MyHomePage(),
     );
@@ -68,13 +68,28 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.remove), // Иконка минуса
-                  onPressed: _decrementCounter, // Уменьшить счетчик
+                // Кнопка с минусом (красная)
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.red, // Красный фон
+                    borderRadius: BorderRadius.circular(10), // Закругление углов
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.remove, color: Colors.white), // Белая иконка минуса
+                    onPressed: _decrementCounter, // Уменьшить счетчик
+                  ),
                 ),
-                IconButton(
-                  icon: Icon(Icons.add), // Иконка плюса
-                  onPressed: _incrementCounter, // Увеличить счетчик
+                SizedBox(width: 20), // Отступ между кнопками
+                // Кнопка с плюсом (зелёная)
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.green, // Зелёный фон
+                    borderRadius: BorderRadius.circular(10), // Закругление углов
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.add, color: Colors.white), // Белая иконка плюса
+                    onPressed: _incrementCounter, // Увеличить счетчик
+                  ),
                 ),
               ],
             ),
